@@ -4,7 +4,7 @@ import {
   Text,
   View
 } from 'react-native';
-import ActionButton from 'react-native-action-button';
+// import ActionButton from 'react-native-action-button';
 
 
 export default class App extends Component<{}> {
@@ -14,7 +14,7 @@ export default class App extends Component<{}> {
         <Text style={styles.welcome}>
           Welcome to Handy Dandy!
         </Text>
-        <ActionButton buttonColor='rgba(12,220,220,1)' onPress={() => alert('hi')} />
+        {/* <ActionButton buttonColor='rgba(12,220,220,1)' onPress={() => alert('hi')} /> */}
       </View>
     );
   }
