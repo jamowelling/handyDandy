@@ -9,7 +9,7 @@ Navigation.startTabBasedApp({
       label: 'One',
       screen: 'example.FirstTabScreen',
       icon: require('./img/one.png'), // eslint-disable-line no-undef
-      title: 'Screen One',
+      title: 'Handy Dandy',
     },
     {
       label: 'Two',
