@@ -7,13 +7,13 @@ Navigation.startTabBasedApp({
   tabs: [
     {
       label: 'One',
-      screen: 'example.FirstTabScreen',
+      screen: 'handyDandy.FirstTabScreen',
       icon: require('./img/one.png'), // eslint-disable-line no-undef
       title: 'Handy Dandy',
     },
     {
       label: 'Two',
-      screen: 'example.SecondTabScreen',
+      screen: 'handyDandy.SecondTabScreen',
       icon: require('./img/two.png'), // eslint-disable-line no-undef
       title: 'Screen Two',
     },
