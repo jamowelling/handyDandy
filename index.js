@@ -1,7 +1,5 @@
-// import { AppRegistry } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import { registerScreens } from './screens';
-// import HandyDandy from './HandyDandy';
 
 registerScreens();
 
@@ -10,16 +8,14 @@ Navigation.startTabBasedApp({
     {
       label: 'One',
       screen: 'example.FirstTabScreen',
-      icon: require('./img/one.png'),
+      icon: require('./img/one.png'), // eslint-disable-line no-undef
       title: 'Screen One',
     },
     {
       label: 'Two',
       screen: 'example.SecondTabScreen',
-      icon: require('./img/two.png'),
+      icon: require('./img/two.png'), // eslint-disable-line no-undef
       title: 'Screen Two',
     },
   ]
 });
-
-// AppRegistry.registerComponent('handyDandy', () => HandyDandy);
