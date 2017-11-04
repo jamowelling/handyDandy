@@ -1,15 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import ActionButton from 'react-native-action-button';
 
 
 export default class App extends Component<{}> {
@@ -19,6 +14,7 @@ export default class App extends Component<{}> {
         <Text style={styles.welcome}>
           Welcome to Handy Dandy!
         </Text>
+        <ActionButton buttonColor='rgba(12,220,220,1)' onPress={() => alert('hi')} />
       </View>
     );
   }
@@ -27,9 +23,6 @@ export default class App extends Component<{}> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
     fontSize: 20,
