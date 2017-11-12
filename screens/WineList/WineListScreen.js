@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ListView } from 'react-native';
-import WineList from '../WineList';
+import WineList from './WineList';
 
 class WineListScreen extends Component <{}> {
   constructor() {

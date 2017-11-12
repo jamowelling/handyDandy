@@ -1,7 +1,7 @@
 import { Navigation } from 'react-native-navigation';
 
-import HandyDandyScreen from './HandyDandyScreen';
-import WineListScreen from './WineListScreen';
+import HandyDandyScreen from './HandyDandy/HandyDandyScreen';
+import WineListScreen from './WineList/WineListScreen';
 import PushedScreen from './PushedScreen.js';
 
 export function registerScreens() {
