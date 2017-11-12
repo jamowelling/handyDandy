@@ -26,7 +26,7 @@ const WineList = {
     type: 'bubbly',
     techSheet: {},
   },
-  CaDelSarto: {
+  'Ca del Sarto': {
     varietal: 'Pinot Grigio',
     grapes: ['Pinot Grigio'],
     vintage: 2016,
@@ -53,7 +53,7 @@ const WineList = {
     type: 'white',
     techSheet: {},
   },
-  LastAugust: {
+  'Last August': {
     varietal: 'Sauvignon Blanc',
     grapes: ['Sauvignon Blanc'],
     vintage: 2016,
@@ -107,7 +107,7 @@ const WineList = {
     type: 'white',
     techSheet: {},
   },
-  Hollys: {
+  'Holly\'s Way': {
     varietal: 'Chardonnay',
     grapes: ['Chardonnay'],
     vintage: 2016,
@@ -116,7 +116,7 @@ const WineList = {
     type: 'white',
     techSheet: {},
   },
-  CaDelRe: {
+  'Ca del Re': {
     varietal: 'Moscato D\'Asti',
     grapes: ['Moscato'],
     vintage: 2016,
@@ -125,7 +125,7 @@ const WineList = {
     type: 'white',
     techSheet: {},
   },
-  LExcellence: {
+  'L\'Excellence': {
     varietal: 'rose',
     grapes: ['Grenache, 40%', 'Cinsault, 40%', 'Syrah, 20%'],
     vintage: 2016,

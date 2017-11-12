@@ -15,7 +15,7 @@ Navigation.startTabBasedApp({
       label: 'Wine List',
       screen: 'handyDandy.WineListScreen',
       icon: require('./img/two.png'), // eslint-disable-line no-undef
-      title: 'Screen Two',
+      title: 'Wine List Nov 2017',
     },
   ]
 });

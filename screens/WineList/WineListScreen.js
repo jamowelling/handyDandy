@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, ListView } from 'react-native';
+import { View, ListView } from 'react-native';
 import WineList from './WineList';
+import WineButton from './WineButton';
 
 class WineListScreen extends Component <{}> {
   constructor() {
@@ -20,7 +21,7 @@ class WineListScreen extends Component <{}> {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', }}>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={rowData => <Text>{rowData[0]}</Text>}
+          renderRow={rowData => <WineButton>{rowData[0]}</WineButton>}
         />
       </View>
     );
