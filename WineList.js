@@ -1,4 +1,4 @@
-export const WineList = {
+const WineList = {
   Neirano: {
     varietal: 'Prosecco',
     grapes: ['Glera'],
@@ -243,3 +243,5 @@ export const WineList = {
     techSheet: {}
   },
 };
+
+export default WineList;

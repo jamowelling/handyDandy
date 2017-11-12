@@ -6,14 +6,14 @@ registerScreens();
 Navigation.startTabBasedApp({
   tabs: [
     {
-      label: 'One',
-      screen: 'handyDandy.FirstTabScreen',
+      label: 'Home',
+      screen: 'handyDandy.HandyDandyScreen',
       icon: require('./img/one.png'), // eslint-disable-line no-undef
       title: 'Handy Dandy',
     },
     {
-      label: 'Two',
-      screen: 'handyDandy.SecondTabScreen',
+      label: 'Wine List',
+      screen: 'handyDandy.WineListScreen',
       icon: require('./img/two.png'), // eslint-disable-line no-undef
       title: 'Screen Two',
     },
