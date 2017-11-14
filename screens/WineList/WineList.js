@@ -35,7 +35,7 @@ const WineList = {
     type: 'white',
     techSheet: {},
   },
-  Fruitire: {
+  Fruitiere: {
     varietal: 'Melon',
     grapes: ['Melon de Bourgogne', 'Chardonnay', 'Sauvignon Blanc'],
     vintage: 2016,

@@ -14,7 +14,6 @@ class WineListScreen extends Component <{}> {
     rightButtons: [],
     leftButtons: [{
       id: 'cancel',
-      buttonColor: 'red',
     }],
   };
 
@@ -33,10 +32,13 @@ class WineListScreen extends Component <{}> {
 
   _keyExtractor = (item) => item[0];
 
-  onPress = () => {
+  onPress = (name, info) => {
     this.props.navigator.push({ // eslint-disable-line
       screen: 'handyDandy.PushedScreen',
-      title: 'Entry Creation',
+      title: name,
+      passProps: {
+        info,
+      },
     });
   };
 
@@ -52,7 +54,7 @@ class WineListScreen extends Component <{}> {
                 <WineButton
                   info={item[1]}
                   id={item[0]}
-                  onPress={() => alert('pressed')}
+                  onPress={() => this.onPress(item[0], item[1])}
                 >
                   {item[0]}
                 </WineButton>
