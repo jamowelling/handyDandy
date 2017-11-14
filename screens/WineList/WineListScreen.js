@@ -4,13 +4,32 @@ import WineList from './WineList';
 import WineButton from './WineButton';
 
 class WineListScreen extends Component <{}> {
-
   static navigatorStyle = {
-    navBarTranslucent: true,
     navBarTitleTextCentered: true,
     drawUnderNavBar: Platform.OS !== 'ios',
     tabBarHidden: true,
   };
+
+  static navigatorButtons = {
+    rightButtons: [],
+    leftButtons: [{
+      id: 'cancel',
+      buttonColor: 'red',
+    }],
+  };
+
+  constructor(props) {
+    super(props);
+    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
+  }
+
+  onNavigatorEvent(event) {
+    if (event.type == 'NavBarButtonPress') {
+      this.props.navigator.switchToTab({
+        tabIndex: 0,
+      });
+    }
+  }
 
   _keyExtractor = (item) => item[0];
 
