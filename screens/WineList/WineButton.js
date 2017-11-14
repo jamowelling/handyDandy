@@ -1,12 +1,20 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
-const WineButton = ({ children }) => {
+const WineButton = ({ children, info, onPress }) => {
+  // console.log('info', info);
   return (
-      <View>
-        <Text>{children}</Text>
-      </View>
+      <TouchableOpacity style={styles.container} onPress={onPress}>
+        <Text style={{ lineHeight: 40 }}>{children}</Text>
+      </TouchableOpacity>
   )
+};
+
+const styles = {
+  container: {
+    flex: 1,
+    borderWidth: 0.5,
+  },
 };
 
 export default WineButton;
