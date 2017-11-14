@@ -1,27 +1,35 @@
 import React, { Component } from 'react';
-import { View, ListView } from 'react-native';
+import { View, FlatList } from 'react-native';
 import WineList from './WineList';
 import WineButton from './WineButton';
 
 class WineListScreen extends Component <{}> {
-  constructor() {
-    super();
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      dataSource: ds.cloneWithRows(Object.entries(WineList)),
-    };
-  }
+
   static navigatorStyle = {
     navBarTranslucent: true,
     navBarTitleTextCentered: true,
   };
 
+  buildData = (arrayOfArrays) => {
+    const data = [];
+    // arrayOfArrays.forEach((element) => console.log(element));
+    arrayOfArrays.forEach(element => {
+      data.push({ wine: element });
+    });
+    return data;
+  }
+
+  _keyExtractor = (item) => item[0];
+
   render() {
+    // console.log('WineList', Object.entries(WineList));
+    console.log(this.buildData(Object.entries(WineList)));
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', }}>
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={rowData => <WineButton>{rowData[0]}</WineButton>}
+        <FlatList
+          data={Object.entries(WineList)}
+          keyExtractor={this._keyExtractor}
+          renderItem={({item}) => <WineButton>{item[0]}</WineButton>}
         />
       </View>
     );
