@@ -17,5 +17,5 @@ Navigation.startTabBasedApp({
       icon: require('./img/two.png'), // eslint-disable-line no-undef
       title: 'Wine List Nov 2017',
     },
-  ]
+  ],
 });

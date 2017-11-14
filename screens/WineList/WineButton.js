@@ -13,7 +13,7 @@ const WineButton = ({ children, info, onPress }) => {
 const styles = {
   container: {
     flex: 1,
-    borderWidth: 2,
+    borderWidth: 0.5,
   },
 };
 
