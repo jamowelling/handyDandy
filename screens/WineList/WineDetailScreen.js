@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 import WineDetail from './WineDetail';
 
 class WineDetailScreen extends Component <{}> {
@@ -19,6 +19,7 @@ class WineDetailScreen extends Component <{}> {
       tastingNotes,
       varietal,
       vintage,
+      techSheet
     } = this.props.info
 
     return (
@@ -28,6 +29,14 @@ class WineDetailScreen extends Component <{}> {
         <WineDetail detailCategory='Vintage' detail={vintage} />
         <WineDetail detailCategory='Appellation' detail={appellation} />
         <WineDetail detailCategory='Tasting Notes' detail={tastingNotes} />
+        <TouchableOpacity onPress={() => this.props.navigator.push({
+          screen: 'handyDandy.TechSheet',
+          passProps: {
+            source: techSheet
+          }
+        })}>
+          <Text>Tech Sheet</Text>
+        </TouchableOpacity>
       </View>
     );
   }

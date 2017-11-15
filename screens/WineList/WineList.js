@@ -11,7 +11,7 @@ const WineList = {
       'Charmat Method',
     ],
     type: 'bubbly',
-    techSheet: {},
+    techSheet: { uri: '../../assets/TechSheets/Nov2017/Neirano.pdf'},
   },
   Valor: {
     varietal: 'Cava',
