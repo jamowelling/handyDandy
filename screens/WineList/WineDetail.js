@@ -4,10 +4,8 @@ import { View, Text } from 'react-native';
 const WineDetail = ({ detailCategory, detail }) => {
 
   const formatArray = (detail) => {
-    console.log(detail);
     let res = '';
     if (typeof detail !== 'string') {
-      alert('hit');
       detail.forEach(e => {
         res += `${e + '\n'}`
       });
@@ -39,13 +37,19 @@ const WineDetail = ({ detailCategory, detail }) => {
 const styles = {
   container: {
     flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderColor: '#ddd'
   },
   detailWrapper: {
     flex: 1,
+    paddingVertical: 5,
     paddingHorizontal: 2,
+    marginVertical: 10,
   },
   detailCategory: {
     textAlign: 'right',
+    fontWeight: 'bold',
+    // fontSize: 20,
   },
   detail: {
     textAlign: 'left',
