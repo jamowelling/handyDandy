@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import WineDetail from './WineList/WineDetail';
 
-class CreateEntryScreen extends Component <{}> {
+class WineDetailScreen extends Component <{}> {
 
   formatGrapes = (grapes) => {
     let res = '';
@@ -33,4 +33,4 @@ class CreateEntryScreen extends Component <{}> {
   }
 }
 
-export default CreateEntryScreen;
+export default WineDetailScreen;
