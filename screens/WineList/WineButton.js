@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
-const WineButton = ({ children, info, onPress }) => {
+const WineButton = ({ children, onPress }) => {
   // console.log('info', info);
   return (
       <TouchableOpacity style={styles.container} onPress={onPress}>

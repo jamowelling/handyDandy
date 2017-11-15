@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import WineDetail from './WineList/WineDetail';
 
 class CreateEntryScreen extends Component <{}> {
+
+  formatGrapes = (grapes) => {
+    let res = '';
+    grapes.forEach(grape => {
+      res += grape + '\n';
+    });
+    return res;
+  }
+
   render() {
     const {
       appellation,
@@ -10,13 +20,14 @@ class CreateEntryScreen extends Component <{}> {
       varietal,
       vintage,
     } = this.props.info
+
     return (
-      <View style={{ alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Varietal: {varietal}</Text>
-        <Text>Grapes: {grapes}</Text>
-        <Text>Vintage: {vintage}</Text>
-        <Text>Appellation: {appellation}</Text>
-        <Text>Tasting Notes: {tastingNotes}</Text>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <WineDetail detailCategory='Varietal' detail={varietal} />
+        <WineDetail detailCategory='Grapes' detail={grapes} />
+        <WineDetail detailCategory='Vintage' detail={vintage} />
+        <WineDetail detailCategory='Appellation' detail={appellation} />
+        <WineDetail detailCategory='Tasting Notes' detail={tastingNotes} />
       </View>
     );
   }
