@@ -10,8 +10,8 @@ const TechSheet = ({ source }) => {
       <Pdf
         source={source}
         onLoadComplete={pageCount => console.log(pageCount)}
-        onPageChanged={(page, pageCount) => console.log(`current page: ${page}`)}
-        onError={error => console.log(error)}
+        // onPageChanged={(page, pageCount) => console.log(`current page: ${page}`)}
+        // onError={error => console.log(error)}
         style={{ flex: 1 }}
       />
     </View>
