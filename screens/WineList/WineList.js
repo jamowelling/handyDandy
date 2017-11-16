@@ -1,3 +1,4 @@
+/* eslint-disable */
 const WineList = {
   Neirano: {
     varietal: 'Prosecco',
