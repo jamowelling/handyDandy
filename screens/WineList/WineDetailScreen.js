@@ -35,7 +35,11 @@ class WineDetailScreen extends Component <{}> {
             source: techSheet
           }
         })}>
-          <Text>Tech Sheet</Text>
+          <Text
+            style={{ fontSize: 18, textDecorationLine: 'underline', color: 'blue' }}
+          >
+            Tech Sheet
+          </Text>
         </TouchableOpacity>
       </View>
     );
