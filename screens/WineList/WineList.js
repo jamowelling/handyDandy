@@ -1,3 +1,4 @@
+/* eslint-disable */
 const WineList = {
   Neirano: {
     varietal: 'Prosecco',
@@ -98,7 +99,7 @@ const WineList = {
     techSheet: require('../../assets/TechSheets/Nov2017/LastAugust.pdf'),
   },
   Terra: {
-    varietal: 'Vermentino, Chardonnay',
+    varietal: 'Vermentino',
     grapes: ['Vermentino, 60%', 'Chardonnay, 40%'],
     vintage: 2016,
     appellation: 'Corsica, France',
