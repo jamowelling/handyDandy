@@ -11,11 +11,11 @@ const WineList = {
       'Charmat Method',
     ],
     type: 'bubbly',
-    techSheet: { uri: '../../assets/TechSheets/Nov2017/Neirano.pdf'},
+    techSheet: require('../../assets/TechSheets/Nov2017/Neirano.pdf'),
   },
   Valor: {
     varietal: 'Cava',
-    grapes: ['Xarel-lo', 'Macabeo', 'Parellada'],
+    grapes: ['Xarel-lo, 50%', 'Macabeo, 25%', 'Parellada, 25%'],
     vintage: 'NV',
     appellation: 'Penedes, Spain',
     tastingNotes: [
@@ -25,7 +25,7 @@ const WineList = {
       'Creamy',
     ],
     type: 'bubbly',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Valor.pdf'),
   },
   Mercat: {
     varietal: 'Sparkling Rose',
@@ -39,7 +39,7 @@ const WineList = {
       'Fine bubbles',
     ],
     type: 'bubbly',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Mercat.pdf'),
   },
   'Ca del Sarto': {
     varietal: 'Pinot Grigio',
@@ -53,7 +53,7 @@ const WineList = {
       'Smooth texture',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/CaDelSarto.pdf'),
   },
   Fruitiere: {
     varietal: 'Melon',
@@ -67,7 +67,7 @@ const WineList = {
       'Musky',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Fruitiere.pdf'),
   },
   Oniric: {
     varietal: 'Xarel-lo',
@@ -81,7 +81,7 @@ const WineList = {
       'Green almond',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Oniric.pdf'),
   },
   'Last August': {
     varietal: 'Sauvignon Blanc',
@@ -95,7 +95,7 @@ const WineList = {
       'Racy acidity',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/LastAugust.pdf'),
   },
   Terra: {
     varietal: 'Vermentino, Chardonnay',
@@ -109,7 +109,7 @@ const WineList = {
       'White peach',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Terra.pdf'),
   } ,
   Perfekt: {
     varietal: 'Riesling',
@@ -123,7 +123,7 @@ const WineList = {
       'Off-dry',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Perfekt.pdf'),
   },
   Scarpetta: {
     varietal: 'Friulano-Chardonnay',
@@ -137,7 +137,7 @@ const WineList = {
       'Dried honey',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Scarpetta.pdf'),
   },
   Frame: {
     varietal: 'Chardonnay',
@@ -151,7 +151,7 @@ const WineList = {
       'Orange marmalade',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Frame.pdf'),
   },
   Curator: {
     varietal: 'Chenin Blanc',
@@ -165,7 +165,7 @@ const WineList = {
       'Beeswax'
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Curator.pdf'),
   },
   'Holly\'s Way': {
     varietal: 'Chardonnay',
@@ -179,7 +179,7 @@ const WineList = {
       'Subtle toast',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Hollys.pdf'),
   },
   'Ca del Re': {
     varietal: 'Moscato D\'Asti',
@@ -193,7 +193,7 @@ const WineList = {
       'Citrus',
     ],
     type: 'white',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/CaDelRe.pdf'),
   },
   'L\'Excellence': {
     varietal: 'rose',
@@ -207,7 +207,7 @@ const WineList = {
       'Fresh herbs',
     ],
     type: 'rose',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/LExcellence.pdf'),
   },
   Stagedive: {
     varietal: 'Pinot Noir',
@@ -221,7 +221,7 @@ const WineList = {
       'Forest floor',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Stagedive.pdf'),
   },
   Fiore: {
     varietal: 'Barbera D\'Asti',
@@ -235,7 +235,7 @@ const WineList = {
       'Cinnamon',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Fiore.pdf'),
   },
   Sepp: {
     varietal: 'Zweigelt',
@@ -249,7 +249,7 @@ const WineList = {
       'Earthy',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Sepp.pdf'),
   },
   Brotte: {
     varietal: 'Grenache',
@@ -263,7 +263,7 @@ const WineList = {
       'Wild herbs',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Brotte.pdf'),
   },
   Masciarelli: {
     varietal: 'Montepulciano',
@@ -277,11 +277,11 @@ const WineList = {
       'Award winning producer',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Masciarelli.pdf'),
   },
   Pecina: {
     varietal: 'Tempranillo',
-    grapes: ['Tempranillo, 95%', 'Graciano, 5%'],
+    grapes: ['Tempranillo, 95%', 'Garnacha & Graciano, 5%'],
     vintage: 2015,
     appellation: 'Rioja, Spain',
     tastingNotes: [
@@ -291,7 +291,7 @@ const WineList = {
       'Balsamic',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Pecina.pdf'),
   },
   Antioch: {
     varietal: 'Zinfandel',
@@ -305,7 +305,7 @@ const WineList = {
       'Black raspberry',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Antioch.pdf'),
   },
   Espiritu: {
     varietal: 'Malbec',
@@ -319,7 +319,7 @@ const WineList = {
       'Sappy fruit',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Espiritu.pdf'),
   },
   Altamente: {
     varietal: 'Monastrell',
@@ -333,7 +333,7 @@ const WineList = {
       'Tangy',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Altamente.pdf'),
   },
   Redwood: {
     varietal: 'Red Blend',
@@ -347,7 +347,7 @@ const WineList = {
       'Black tea',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Redwood.pdf'),
   },
   Peirano: {
     varietal: 'Merlot',
@@ -361,7 +361,7 @@ const WineList = {
       'Raspberry',
     ],
     type: 'red',
-    techSheet: {},
+    techSheet: require('../../assets/TechSheets/Nov2017/Peirano.pdf'),
   },
   Centenario: {
     varietal: 'Cabernet Sauvignon',
@@ -375,7 +375,7 @@ const WineList = {
       'Ripe tannins'
     ],
     type: 'red',
-    techSheet: {}
+    techSheet: require('../../assets/TechSheets/Nov2017/Centenario.pdf'),
   },
 };
 
