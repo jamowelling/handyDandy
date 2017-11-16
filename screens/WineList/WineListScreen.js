@@ -34,7 +34,7 @@ class WineListScreen extends Component <{}> {
 
   onPress = (name, info) => {
     this.props.navigator.push({ // eslint-disable-line
-      screen: 'handyDandy.PushedScreen',
+      screen: 'handyDandy.WineDetailScreen',
       title: name,
       passProps: {
         info,
