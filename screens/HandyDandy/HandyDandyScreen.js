@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  TextInput,
+  Text,
   AsyncStorage
 } from 'react-native';
 import ActionButton from 'react-native-action-button';
@@ -47,10 +47,7 @@ export default class HandyDandyScreen extends Component<{}> {
     return (
       <View style={styles.container}>
         <View style={styles.textWrapper}>
-          <TextInput
-            value={this.state.text}
-            onChangeText={text => this.setState({ text })}
-          />
+          <Text>Handy Dandy!</Text>
         </View>
         <ActionButton buttonColor='rgba(12,220,220,1)' onPress={this.onPress} />
       </View>
