@@ -27,7 +27,7 @@ public class MainApplication extends NavigationApplication {
         new MainReactPackage(),
             new RNFetchBlobPackage(),
             new RCTPdfView(),
-          new VectorIconsPackage()
+            new VectorIconsPackage()
     );
   }
 
