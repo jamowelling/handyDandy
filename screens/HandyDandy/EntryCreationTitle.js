@@ -20,7 +20,7 @@ const styles = {
     fontSize: 18,
     color: 'rgba(100,100,100,1)',
     padding: 10,
-    fontFamily: 'serif'
+    fontFamily: 'serif',
   }
 }
 

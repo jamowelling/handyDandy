@@ -3,7 +3,6 @@ import {
   StyleSheet,
   View,
   Text,
-  AsyncStorage
 } from 'react-native';
 import ActionButton from 'react-native-action-button';
 
@@ -22,25 +21,6 @@ export default class HandyDandyScreen extends Component<{}> {
       screen: 'handyDandy.EntryCreationScreen',
       title: 'New Entry',
     });
-
-      // Rudimentary code for placing data in AsyncStorage
-    // try {
-    //   await AsyncStorage.setItem('TestText', this.state.text);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-
-      // Rudimentary code for retrieving data from AsyncStorage
-    // try {
-    //   const value = await AsyncStorage.getItem('TestText');
-    //   if (value !== null){
-    //     // We have data!!
-    //     console.log(value);
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    //   // Error retrieving data
-    // }
   };
 
   render() {

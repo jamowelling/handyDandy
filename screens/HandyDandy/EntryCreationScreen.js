@@ -3,6 +3,8 @@ import {
   View,
   // AsyncStorage
 } from 'react-native';
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/FontAwesome'
 import EntryCreationBody from './EntryCreationBody';
 import EntryCreationTitle from './EntryCreationTitle';
 
@@ -20,6 +22,10 @@ class EntryCreationScreen extends Component <{}> {
     this.setState({ titleText });
   }
 
+  FabPress = () => {
+    alert('pressed');
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
@@ -31,12 +37,17 @@ class EntryCreationScreen extends Component <{}> {
             placeholder={Date().toLocaleString('en-US', { hour12: true })}
           />
         </View>
-        <View>
+        <View style={{ flex: 1 }}>
           <EntryCreationBody
             onChangeText={this.updateBodyText}
             value={this.state.bodyText}
           />
         </View>
+        <ActionButton
+          buttonColor='rgba(12,220,220,1)'
+          onPress={this.FabPress}
+          icon={<Icon name='check' size={20} />}
+        />
       </View>
     );
   }
