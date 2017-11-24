@@ -29,20 +29,16 @@ class EntryCreationScreen extends Component <{}> {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <View>
-          <EntryCreationTitle
-            onChangeText={this.updateTitleText}
-            value={this.state.titleText}
-            defaultValue={Date().toLocaleString('en-US')}
-            placeholder={Date().toLocaleString('en-US', { hour12: true })}
-          />
-        </View>
-        <View style={{ flex: 1 }}>
-          <EntryCreationBody
-            onChangeText={this.updateBodyText}
-            value={this.state.bodyText}
-          />
-        </View>
+        <EntryCreationTitle
+          onChangeText={this.updateTitleText}
+          value={this.state.titleText}
+          defaultValue={Date().toLocaleString('en-US')}
+          placeholder={Date().toLocaleString('en-US', { hour12: true })}
+        />
+        <EntryCreationBody
+          onChangeText={this.updateBodyText}
+          value={this.state.bodyText}
+        />
         <ActionButton
           buttonColor='rgba(12,220,220,1)'
           onPress={this.FabPress}
