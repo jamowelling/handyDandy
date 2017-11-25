@@ -53,7 +53,6 @@ export default class HandyDandyScreen extends Component<{}> {
     } catch (error) {
       // console.log('error: ', error);
     }
-    // Merge item here? Or set new value for old key 'handyDandyEntries'
   }
 
   onPress = () => {
@@ -66,6 +65,22 @@ export default class HandyDandyScreen extends Component<{}> {
     });
   };
 
+  renderListItem = ({ item }) => {
+    return (
+      <ListEntry
+        id={item.date}
+        title={item.title}
+        onPress={() => this.props.navigator.push({ // eslint-disable-line
+          screen: 'handyDandy.EntryDisplayScreen',
+          title: item.title,
+          passProps: {
+            entry: item,
+          },
+        })}
+      />
+    );
+  }
+
   render() {
     console.log('state.entries', this.state.entries);
     return (
@@ -74,7 +89,7 @@ export default class HandyDandyScreen extends Component<{}> {
           style={{ flex: 1 }}
           data={this.state.entries}
           keyExtractor={item => item.date}
-          renderItem={({item}) => <ListEntry id={item.date} title={item.title}/>}
+          renderItem={this.renderListItem}
         />
         <ActionButton buttonColor='rgba(12,220,220,1)' onPress={this.onPress} />
       </View>

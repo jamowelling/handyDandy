@@ -1,18 +1,19 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 
-const ListEntry = (props) => {
+const ListEntry = ({ onPress, title}) => {
   return (
-    <View style={styles.container}>
-      <Text>{props.title}</Text>
-    </View>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
+      <Text>{title}</Text>
+    </TouchableOpacity>
   );
 }
 
 const styles = {
   container: {
     flex: 1,
-    borderWidth: 1, 
+    borderBottomWidth: 1,
+    paddingVertical: 10,
   }
 };
 
