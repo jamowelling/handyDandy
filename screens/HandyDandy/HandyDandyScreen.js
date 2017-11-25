@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Platform,
   AsyncStorage,
   FlatList
 } from 'react-native';
@@ -26,28 +25,33 @@ export default class HandyDandyScreen extends Component<{}> {
   async _retrieveEntries() {
     let entries;
     try {
-      console.log(await AsyncStorage.getAllKeys());
         await AsyncStorage.getItem('handyDandyEntries', (err, res) => {
         entries = res;
         if (entries) {
           entries = JSON.parse(entries);
-          console.log('entries', entries);
+          // console.log('entries', entries);
           this.setState({ entries });
         }
       });
     } catch (error) {
-      console.log('error: ', error);
+      // console.log('error: ', error);
     }
   }
 
   _saveEntry = async (newEntry) => {
-    let updatedEntries = [...this.state.entries, newEntry];
+    let updatedEntries = [newEntry, ...this.state.entries];
     try {
       updatedEntries = JSON.stringify(updatedEntries);
       await AsyncStorage.setItem('handyDandyEntries', updatedEntries, () => {
-      });
+      })
+      .then(() => {
+        this._retrieveEntries();
+      })
+      .then(() => {
+        this.props.navigator.pop();
+      })
     } catch (error) {
-      console.log('error: ', error);
+      // console.log('error: ', error);
     }
     // Merge item here? Or set new value for old key 'handyDandyEntries'
   }
@@ -67,7 +71,7 @@ export default class HandyDandyScreen extends Component<{}> {
     return (
       <View style={styles.container}>
         <FlatList
-          style={{ flex: 1, marginTop: Platform.OS === 'ios' ? 0 : 56 }}
+          style={{ flex: 1 }}
           data={this.state.entries}
           keyExtractor={item => item.date}
           renderItem={({item}) => <ListEntry id={item.date} title={item.title}/>}

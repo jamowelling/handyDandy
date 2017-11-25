@@ -12,6 +12,7 @@ const ListEntry = (props) => {
 const styles = {
   container: {
     flex: 1,
+    borderWidth: 1, 
   }
 };
 
