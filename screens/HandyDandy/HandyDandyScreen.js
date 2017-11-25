@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
+  Alert,
   AsyncStorage,
   FlatList
 } from 'react-native';
@@ -49,13 +50,28 @@ export default class HandyDandyScreen extends Component<{}> {
       })
       .then(() => {
         this.props.navigator.pop();
-      })
+      });
     } catch (error) {
       // console.log('error: ', error);
     }
   }
 
-  onPress = () => {
+  _removeEntry = async (entryToRemove) => {
+    let updatedEntries = this.state.entries.filter(e => e !== entryToRemove);
+    try {
+      updatedEntries = JSON.stringify(updatedEntries);
+      await AsyncStorage.setItem('handyDandyEntries', updatedEntries, () => {
+      })
+      .then(() => {
+        this._retrieveEntries();
+      });
+    } catch (error) {
+      // console.log('error: ', error);
+    }
+
+  }
+
+  onFabPress = () => {
     this.props.navigator.push({
       screen: 'handyDandy.EntryCreationScreen',
       title: 'New Entry',
@@ -65,11 +81,23 @@ export default class HandyDandyScreen extends Component<{}> {
     });
   };
 
+  onLongPress = (entry) => {
+    Alert.alert(
+      'Delete Entry',
+      'Delete this entry?',
+      [
+        {text: 'Cancel', style: 'cancel'},
+        {text: 'Delete', onPress: () => this._removeEntry(entry)},
+      ],
+    )
+  }
+
   renderListItem = ({ item }) => {
     return (
       <ListEntry
         id={item.date}
         title={item.title}
+        entry={item}
         onPress={() => this.props.navigator.push({ // eslint-disable-line
           screen: 'handyDandy.EntryDisplayScreen',
           title: item.title,
@@ -77,6 +105,7 @@ export default class HandyDandyScreen extends Component<{}> {
             entry: item,
           },
         })}
+        onLongPress={this.onLongPress}
       />
     );
   }
@@ -90,7 +119,7 @@ export default class HandyDandyScreen extends Component<{}> {
           keyExtractor={item => item.date}
           renderItem={this.renderListItem}
         />
-        <ActionButton buttonColor='rgba(12,220,220,1)' onPress={this.onPress} />
+        <ActionButton buttonColor='rgba(12,220,220,1)' onPress={this.onFabPress} />
       </View>
     );
   }

@@ -1,9 +1,13 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
-const ListEntry = ({ onPress, title}) => {
+const ListEntry = ({ onPress, onLongPress, title, entry}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={styles.container}
+      onLongPress={() => onLongPress(entry)}
+    >
       <Text style={styles.textStyle}>{title}</Text>
     </TouchableOpacity>
   );
