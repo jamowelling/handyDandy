@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
   View,
-  // AsyncStorage
 } from 'react-native';
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -23,7 +22,18 @@ class EntryCreationScreen extends Component <{}> {
   }
 
   FabPress = () => {
-    alert('pressed');
+    // Time in format: MM/DD/YYYY HH:MM:SS AM/PM 12 hr format
+    let date =`${new Date().toLocaleDateString('en-US')} ${new Date().toLocaleTimeString('en-US')}`;
+    // console.log('date', date);
+    let newEntry = {
+      date,
+      title: this.state.titleText,
+      body: this.state.bodyText,
+      tags: ['tag1', 'tag2'],
+    };
+
+    // end with:
+    this.props._saveEntry(newEntry)
   }
 
   render() {
