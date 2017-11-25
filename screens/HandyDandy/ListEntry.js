@@ -4,7 +4,7 @@ import { TouchableOpacity, Text } from 'react-native';
 const ListEntry = ({ onPress, title}) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text>{title}</Text>
+      <Text style={styles.textStyle}>{title}</Text>
     </TouchableOpacity>
   );
 }
@@ -12,8 +12,14 @@ const ListEntry = ({ onPress, title}) => {
 const styles = {
   container: {
     flex: 1,
-    borderBottomWidth: 1,
+    borderBottomWidth: 0.5,
+    borderColor: 'rgba(150,150,150,0.9)',
     paddingVertical: 10,
+  },
+  textStyle: {
+    paddingLeft: 10,
+    fontSize: 18,
+    fontWeight: 'bold',
   }
 };
 

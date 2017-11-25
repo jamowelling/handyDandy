@@ -82,7 +82,6 @@ export default class HandyDandyScreen extends Component<{}> {
   }
 
   render() {
-    console.log('state.entries', this.state.entries);
     return (
       <View style={styles.container}>
         <FlatList
