@@ -3,7 +3,11 @@ import { TouchableOpacity, Text } from 'react-native';
 
 const ListEntry = ({ onPress, title}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.container}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={styles.container}
+      onLongPress={() => alert('long press!')}
+    >
       <Text style={styles.textStyle}>{title}</Text>
     </TouchableOpacity>
   );
