@@ -10,37 +10,55 @@ import ActionButton from 'react-native-action-button';
 
 export default class HandyDandyScreen extends Component<{}> {
   state = {
-    text: 'Placeholder text',
+    entries: [],
   }
-
   static navigatorStyle = {
     navBarTranslucent: true,
     navBarTitleTextCentered: true,
   };
-  onPress = async () => {
+
+  componentDidMount() {
+    this._retrieveEntries();
+  }
+
+  async _retrieveEntries() {
+    let entries;
+    try {
+      console.log('reached');
+      console.log(await AsyncStorage.getAllKeys());
+      entries = await AsyncStorage.getItem('anything', (err, res) => {
+        console.log('err', err);
+        console.log('res', res);
+        console.log('entries', entries);
+        if (entries) {
+          this.setState({ entries });
+        }
+      });
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  }
+
+  _saveEntry = async (newEntry) => {
+    let updatedEntries = [...this.state.entries, newEntry];
+    try {
+      updatedEntries = JSON.stringify(updatedEntries);
+      await AsyncStorage.setItem('handyDandyEntries', updatedEntries, () => {
+      });
+    } catch (error) {
+      console.log('error: ', error);
+    }
+    // Merge item here? Or set new value for old key 'handyDandyEntries'
+  }
+
+  onPress = () => {
     this.props.navigator.push({
       screen: 'handyDandy.EntryCreationScreen',
       title: 'New Entry',
+      passProps: {
+        _saveEntry: this._saveEntry,
+      }
     });
-
-      // Rudimentary code for placing data in AsyncStorage
-    // try {
-    //   await AsyncStorage.setItem('TestText', this.state.text);
-    // } catch (error) {
-    //   console.log(error);
-    // }
-
-      // Rudimentary code for retrieving data from AsyncStorage
-    // try {
-    //   const value = await AsyncStorage.getItem('TestText');
-    //   if (value !== null){
-    //     // We have data!!
-    //     console.log(value);
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    //   // Error retrieving data
-    // }
   };
 
   render() {
