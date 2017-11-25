@@ -25,9 +25,13 @@ class EntryCreationScreen extends Component <{}> {
     // Time in format: MM/DD/YYYY HH:MM:SS AM/PM 12 hr format
     let date =`${new Date().toLocaleDateString('en-US')} ${new Date().toLocaleTimeString('en-US')}`;
     // console.log('date', date);
+    let title = this.state.titleText;
+    if (title === '') {
+      title = date;
+    }
     let newEntry = {
       date,
-      title: this.state.titleText,
+      title,
       body: this.state.bodyText,
       tags: ['tag1', 'tag2'],
     };
