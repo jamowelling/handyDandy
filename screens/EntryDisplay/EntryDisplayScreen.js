@@ -5,7 +5,7 @@ class EntryDisplayScreen extends Component <{}> {
   render() {
     return (
       <View>
-        <Text>Entry Display Screen</Text>
+        <Text>{this.props.entry.body}</Text>
       </View>
     );
   }
