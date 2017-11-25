@@ -4,8 +4,8 @@ import { View, Text } from 'react-native';
 class EntryDisplayScreen extends Component <{}> {
   render() {
     return (
-      <View>
-        <Text>{this.props.entry.body}</Text>
+      <View style={{ flex: 1, margin: 15, }}>
+        <Text style={{ fontSize: 20 }}>{this.props.entry.body}</Text>
       </View>
     );
   }
