@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Text,
-  AsyncStorage
+  AsyncStorage,
+  FlatList
 } from 'react-native';
 import ActionButton from 'react-native-action-button';
+import ListEntry from './ListEntry';
 
 
 export default class HandyDandyScreen extends Component<{}> {
@@ -24,29 +25,33 @@ export default class HandyDandyScreen extends Component<{}> {
   async _retrieveEntries() {
     let entries;
     try {
-      console.log('reached');
-      console.log(await AsyncStorage.getAllKeys());
-      entries = await AsyncStorage.getItem('anything', (err, res) => {
-        console.log('err', err);
-        console.log('res', res);
-        console.log('entries', entries);
+        await AsyncStorage.getItem('handyDandyEntries', (err, res) => {
+        entries = res;
         if (entries) {
+          entries = JSON.parse(entries);
+          // console.log('entries', entries);
           this.setState({ entries });
         }
       });
     } catch (error) {
-      console.log('error: ', error);
+      // console.log('error: ', error);
     }
   }
 
   _saveEntry = async (newEntry) => {
-    let updatedEntries = [...this.state.entries, newEntry];
+    let updatedEntries = [newEntry, ...this.state.entries];
     try {
       updatedEntries = JSON.stringify(updatedEntries);
       await AsyncStorage.setItem('handyDandyEntries', updatedEntries, () => {
-      });
+      })
+      .then(() => {
+        this._retrieveEntries();
+      })
+      .then(() => {
+        this.props.navigator.pop();
+      })
     } catch (error) {
-      console.log('error: ', error);
+      // console.log('error: ', error);
     }
     // Merge item here? Or set new value for old key 'handyDandyEntries'
   }
@@ -62,11 +67,15 @@ export default class HandyDandyScreen extends Component<{}> {
   };
 
   render() {
+    console.log('state.entries', this.state.entries);
     return (
       <View style={styles.container}>
-        <View style={styles.textWrapper}>
-          <Text>Handy Dandy!</Text>
-        </View>
+        <FlatList
+          style={{ flex: 1 }}
+          data={this.state.entries}
+          keyExtractor={item => item.date}
+          renderItem={({item}) => <ListEntry id={item.date} title={item.title}/>}
+        />
         <ActionButton buttonColor='rgba(12,220,220,1)' onPress={this.onPress} />
       </View>
     );
