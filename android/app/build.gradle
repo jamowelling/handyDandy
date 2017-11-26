@@ -93,9 +93,11 @@ def enableSeparateBuildPerCPUArchitecture = false
  */
 def enableProguardInReleaseBuilds = false
 
+
 android {
     compileSdkVersion 25
     buildToolsVersion '26.0.2'
+    flavorDimensions "tier"
 
     defaultConfig {
         applicationId "com.handydandy"
@@ -130,6 +132,22 @@ android {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
             signingConfig signingConfigs.release
+        }
+    }
+    productFlavors {
+        dev {
+            minSdkVersion 16
+            applicationId 'com.handydandy.dev'
+            targetSdkVersion 22
+            resValue "string", "build_config_package", "com.myapp"
+            dimension "tier"
+        }
+        beta {
+            minSdkVersion 16
+            applicationId 'com.handydandy'
+            targetSdkVersion 22
+            resValue "string", "build_config_package", "com.myapp"
+            dimension "tier"
         }
     }
     // applicationVariants are e.g. debug, release
