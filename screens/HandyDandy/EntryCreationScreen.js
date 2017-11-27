@@ -46,12 +46,11 @@ class EntryCreationScreen extends Component <{}> {
         <EntryCreationTitle
           onChangeText={this.updateTitleText}
           value={this.state.titleText}
-          defaultValue={Date().toLocaleString('en-US')}
-          placeholder={Date().toLocaleString('en-US', { hour12: true })}
         />
         <EntryCreationBody
           onChangeText={this.updateBodyText}
           value={this.state.bodyText}
+          autoFocus={true}
         />
         <ActionButton
           buttonColor='rgba(12,220,220,1)'
