@@ -10,30 +10,14 @@ class WineListScreen extends Component <{}> {
     tabBarHidden: true,
   };
 
-  static navigatorButtons = {
-    rightButtons: [],
-    leftButtons: [{
-      id: 'cancel',
-    }],
+  state = {
+    offset: 0,
   };
-
-  constructor(props) {
-    super(props);
-    this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
-  }
-
-  onNavigatorEvent(event) {
-    if (event.type == 'NavBarButtonPress') {
-      this.props.navigator.switchToTab({
-        tabIndex: 0,
-      });
-    }
-  }
 
   _keyExtractor = (item) => item[0];
 
   onPress = (name, info) => {
-    this.props.navigator.push({ // eslint-disable-line
+    this.props.navigator.push({
       screen: 'handyDandy.WineDetailScreen',
       title: name,
       passProps: {
@@ -42,13 +26,43 @@ class WineListScreen extends Component <{}> {
     });
   };
 
+  updateOffset = (offset) => {
+    this.setState({ offset });
+  }
+
+  toggleTabBar = (direction) => {
+    if (direction === 'down') {
+      this.props.navigator.toggleTabs({
+        to: 'hidden',
+        animated: true,
+      });
+    } else {
+      this.props.navigator.toggleTabs({
+        to: 'shown',
+        animated: true,
+      })
+    }
+  }
+
+  onScroll(event) {
+    const currentOffset = event.nativeEvent.contentOffset.y;
+    const direction = currentOffset > this.offset ? 'down' : 'up';
+    this.updateOffset(currentOffset);
+    this.toggleTabBar(direction);
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
         <FlatList
           data={Object.entries(WineList)}
           keyExtractor={this._keyExtractor}
-          style={{ flex: 1, marginTop: Platform.OS === 'ios' ? 0 : 56 }}
+          style={{ flex: 1 }}
+          updateOffset={this.updateOffset}
+          offset={this.state.offset}
+          toggleTabBar={this.toggleTabBar}
+          onScroll={this.onScroll}
+          onScrollEnd={() => this.toggleTabBar('down')}
           renderItem={({item}) => {
               return (
                 <WineButton
