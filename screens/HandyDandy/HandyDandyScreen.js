@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
   View,
   Alert,
   AsyncStorage,
@@ -70,12 +69,13 @@ export default class HandyDandyScreen extends Component<{}> {
 
   }
 
-  onFabPress = () => {
+  onPress = ({ item } = { item: { title: null } }) => {
     this.props.navigator.push({
       screen: 'handyDandy.EntryCreationScreen',
-      title: 'New Entry',
+      title: item.title ? item.title : 'New Entry',
       passProps: {
         _saveEntry: this._saveEntry,
+        entry: item,
       }
     });
   };
@@ -98,9 +98,10 @@ export default class HandyDandyScreen extends Component<{}> {
         title={item.title}
         entry={item}
         onPress={() => this.props.navigator.push({ // eslint-disable-line
-          screen: 'handyDandy.EntryDisplayScreen',
+          screen: 'handyDandy.EntryCreationScreen',
           title: item.title,
           passProps: {
+            _saveEntry: this._saveEntry,
             entry: item,
           },
         })}
@@ -111,31 +112,15 @@ export default class HandyDandyScreen extends Component<{}> {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={{ flex: 1 }}>
         <FlatList
           style={{ flex: 1 }}
           data={this.state.entries}
           keyExtractor={item => item.date}
           renderItem={this.renderListItem}
         />
-        <ActionButton buttonColor='rgba(12,220,220,1)' onPress={this.onFabPress} />
+        <ActionButton buttonColor='rgba(12,220,220,1)' onPress={this.onPress} />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  textWrapper: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});

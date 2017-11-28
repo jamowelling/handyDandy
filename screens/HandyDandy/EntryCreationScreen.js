@@ -13,6 +13,11 @@ class EntryCreationScreen extends Component <{}> {
     bodyText: '',
   };
 
+  componentDidMount() {
+    this.setState({ titleText: this.props.entry.title });
+    this.setState({ bodyText: this.props.entry.body });
+  }
+
   updateBodyText = bodyText => {
     this.setState({ bodyText });
   }
