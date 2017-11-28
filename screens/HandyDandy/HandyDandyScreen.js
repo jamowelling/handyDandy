@@ -15,7 +15,6 @@ export default class HandyDandyScreen extends Component<{}> {
     entries: [],
   }
   static navigatorStyle = {
-    navBarTranslucent: true,
     navBarTitleTextCentered: true,
   };
 
