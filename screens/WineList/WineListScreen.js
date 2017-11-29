@@ -64,7 +64,6 @@ class WineListScreen extends Component <{}> {
           offset={this.state.offset}
           toggleTabBar={this.toggleTabBar}
           onScroll={this.onScroll}
-          // onScrollEnd={() => this.toggleTabBar('down')}
           renderItem={({item}) => {
               return (
                 <WineButton
