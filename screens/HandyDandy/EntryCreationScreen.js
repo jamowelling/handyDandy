@@ -31,9 +31,9 @@ class EntryCreationScreen extends Component <{}> {
   FabPress = () => {
     // Time in format: MM/DD/YYYY HH:MM:SS AM/PM 12 hr format
     let date =`${new Date().toLocaleDateString('en-US')} ${new Date().toLocaleTimeString('en-US')}`;
-    // console.log('date', date);
     let id = this.state.id ? this.state.id : date;
     let title = this.state.titleText;
+
     if (title === '') {
       title = date;
     }
