@@ -28,7 +28,6 @@ export default class HandyDandyScreen extends Component<{}> {
         entries = res;
         if (entries) {
           entries = JSON.parse(entries);
-          // console.log('entries', entries);
           this.setState({ entries });
         }
       });
