@@ -6,8 +6,8 @@ import WineButton from './WineButton';
 class WineListScreen extends Component <{}> {
   static navigatorStyle = {
     navBarTitleTextCentered: true,
-    drawUnderNavBar: Platform.OS !== 'ios',
     tabBarHidden: true,
+    drawUnderNavBar: true,
   };
 
   state = {
@@ -53,7 +53,7 @@ class WineListScreen extends Component <{}> {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, marginTop: Platform.OS === 'ios' ? 0 : 54 }}>
         <FlatList
           data={Object.entries(WineList)}
           keyExtractor={this._keyExtractor}

@@ -9,9 +9,16 @@ import EntryCreationTitle from './EntryCreationTitle';
 
 class EntryCreationScreen extends Component <{}> {
   state = {
+    id: '',
     titleText: '',
     bodyText: '',
   };
+
+  componentDidMount() {
+    this.setState({ titleText: this.props.entry.title });
+    this.setState({ bodyText: this.props.entry.body });
+    this.setState({ id: this.props.entry.id });
+  }
 
   updateBodyText = bodyText => {
     this.setState({ bodyText });
@@ -25,11 +32,13 @@ class EntryCreationScreen extends Component <{}> {
     // Time in format: MM/DD/YYYY HH:MM:SS AM/PM 12 hr format
     let date =`${new Date().toLocaleDateString('en-US')} ${new Date().toLocaleTimeString('en-US')}`;
     // console.log('date', date);
+    let id = this.state.id ? this.state.id : date;
     let title = this.state.titleText;
     if (title === '') {
       title = date;
     }
     let newEntry = {
+      id,
       date,
       title,
       body: this.state.bodyText,
