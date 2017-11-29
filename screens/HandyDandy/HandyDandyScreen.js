@@ -72,7 +72,7 @@ export default class HandyDandyScreen extends Component<{}> {
 
   }
 
-  onPress = ({ item } = { item: { title: null } }) => {
+  onPress = ({ item } = { item: { title: '', body: '' } }) => {
     this.props.navigator.push({
       screen: 'handyDandy.EntryCreationScreen',
       title: item.title ? item.title : 'New Entry',

@@ -35,6 +35,10 @@ class EntryCreationScreen extends Component <{}> {
     let title = this.state.titleText;
 
     if (title === '') {
+      if (this.state.bodyText === '') {
+        this.props.navigator.pop();
+        return;
+      }
       title = date;
     }
     let newEntry = {
