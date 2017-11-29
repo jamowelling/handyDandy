@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TextInput } from 'react-native';
 
-const EntryCreationBody = ({ onChangeText, value }) => {
+const EntryCreationBody = ({ onChangeText, value, autoFocus }) => {
   return (
     <View>
       <TextInput
@@ -10,7 +10,7 @@ const EntryCreationBody = ({ onChangeText, value }) => {
         placeholder='Note'
         underlineColorAndroid='rgba(0,0,0,0)'
         style={styles.bodyStyle}
-        autoFocus
+        autoFocus={autoFocus}
         multiline
       />
     </View>
