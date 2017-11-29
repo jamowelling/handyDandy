@@ -24,7 +24,7 @@ export default class HandyDandyScreen extends Component<{}> {
   async _retrieveEntries() {
     let entries;
     try {
-        await AsyncStorage.getItem('handyDandyEntries', (err, res) => {
+      await AsyncStorage.getItem('handyDandyEntries', (err, res) => {
         entries = res;
         if (entries) {
           entries = JSON.parse(entries);
@@ -38,7 +38,11 @@ export default class HandyDandyScreen extends Component<{}> {
   }
 
   _saveEntry = async (newEntry) => {
-    let updatedEntries = [newEntry, ...this.state.entries];
+    let updatedEntries = [
+      newEntry,
+      ...this.state.entries.filter(entry => entry.id !== newEntry.id)
+    ];
+
     try {
       updatedEntries = JSON.stringify(updatedEntries);
       await AsyncStorage.setItem('handyDandyEntries', updatedEntries, () => {
@@ -97,7 +101,7 @@ export default class HandyDandyScreen extends Component<{}> {
         id={item.date}
         title={item.title}
         entry={item}
-        onPress={() => this.props.navigator.push({ // eslint-disable-line
+        onPress={() => this.props.navigator.push({
           screen: 'handyDandy.EntryCreationScreen',
           title: item.title,
           passProps: {
