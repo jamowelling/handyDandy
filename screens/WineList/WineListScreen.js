@@ -47,7 +47,7 @@ class WineListScreen extends Component <{}> {
   onScroll(event) {
     const currentOffset = event.nativeEvent.contentOffset.y;
     const direction = (currentOffset > this.offset) &&
-                      !(currentOffset === 0 || this.offset === 0) ?
+                      (currentOffset > 0 && this.offset > 0) ?
                       'down' : 'up';
     this.updateOffset(currentOffset);
     this.toggleTabBar(direction);
