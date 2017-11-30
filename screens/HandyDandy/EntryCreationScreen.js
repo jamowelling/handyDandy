@@ -33,6 +33,8 @@ class EntryCreationScreen extends Component <{}> {
     let date =`${new Date().toLocaleDateString('en-US')} ${new Date().toLocaleTimeString('en-US')}`;
     let id = this.state.id ? this.state.id : date;
     let title = this.state.titleText;
+    let body = this.state.bodyText;
+    let tags = body.match(/\B#\w\w+/g);
 
     if (title === '') {
       if (this.state.bodyText === '') {
@@ -45,8 +47,8 @@ class EntryCreationScreen extends Component <{}> {
       id,
       date,
       title,
-      body: this.state.bodyText,
-      tags: ['tag1', 'tag2'],
+      body,
+      tags,
     };
 
     // end with:
