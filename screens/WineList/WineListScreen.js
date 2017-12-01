@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
-import { View, FlatList, Platform } from 'react-native';
+import { View, FlatList, Platform, BackHandler } from 'react-native';
 import WineList from './WineList';
 import WineButton from './WineButton';
 
 class WineListScreen extends Component <{}> {
+  constructor(props) {
+    super(props);
+    BackHandler.addEventListener('hardwareBackPress', () => {
+      this.props.navigator.switchToTab({
+        tabIndex: 0,
+      });
+      return true;
+    });
+  }
+
+
   static navigatorStyle = {
     navBarTitleTextCentered: true,
     tabBarHidden: true,
