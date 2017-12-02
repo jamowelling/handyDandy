@@ -18,4 +18,14 @@ Navigation.startTabBasedApp({
       title: 'Wine List Nov 2017',
     },
   ],
+  drawer: {
+    left: {
+      screen: 'handyDandy.SideDrawer',
+      passProps: {
+
+      },
+      disableOpenGesture: false,
+      animated: true,
+    }
+  }
 });
