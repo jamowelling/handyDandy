@@ -12,7 +12,16 @@ import ListEntry from './ListEntry';
 export default class HandyDandyScreen extends Component<{}> {
   state = {
     entries: [],
-  }
+  };
+  static navigatorButtons = {
+    rightButtons: [],
+    leftButtons: [
+      {
+        title: 'sideMenu',
+        id: 'sideMenu'
+      }
+    ]
+  };
   static navigatorStyle = {
     navBarTitleTextCentered: true,
   };
