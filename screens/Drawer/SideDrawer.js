@@ -32,8 +32,8 @@ const styles = {
     borderRadius: 25,
     margin: 6,
     marginTop: 50,
-    borderWidth: 0.5,
-    borderColor: '#aaa',
+    borderWidth: 1.5,
+    borderColor: '#ccc',
   },
   textInputStyle: {
     marginLeft: 6,

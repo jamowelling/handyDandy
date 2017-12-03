@@ -14,7 +14,6 @@ export default class HandyDandyScreen extends Component<{}> {
     entries: [],
   };
   static navigatorButtons = {
-    rightButtons: [],
     leftButtons: [
       {
         title: 'sideMenu',
