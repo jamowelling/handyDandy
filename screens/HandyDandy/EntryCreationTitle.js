@@ -12,7 +12,7 @@ const EntryCreationTitle = ({ value, onChangeText }) => {
         placeholder='Title'
       />
     </View>
-  )
+  );
 };
 
 const styles = {
@@ -22,6 +22,6 @@ const styles = {
     padding: 10,
     fontFamily: 'serif',
   }
-}
+};
 
 export default EntryCreationTitle;

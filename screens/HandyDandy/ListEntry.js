@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
 
-const ListEntry = ({ onPress, onLongPress, title, entry}) => {
+const ListEntry = ({ onPress, onLongPress, title, entry }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -11,7 +11,7 @@ const ListEntry = ({ onPress, onLongPress, title, entry}) => {
       <Text style={styles.textStyle}>{title}</Text>
     </TouchableOpacity>
   );
-}
+};
 
 const styles = {
   container: {

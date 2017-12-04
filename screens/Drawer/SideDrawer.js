@@ -58,6 +58,6 @@ const styles = {
   listWrapper: {
     flex: 1,
   },
-}
+};
 
 export default SideDrawer;
