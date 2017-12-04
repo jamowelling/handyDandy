@@ -51,7 +51,7 @@ class WineListScreen extends Component <{}> {
       this.props.navigator.toggleTabs({
         to: 'shown',
         animated: true,
-      })
+      });
     }
   }
 
@@ -75,7 +75,7 @@ class WineListScreen extends Component <{}> {
           offset={this.state.offset}
           toggleTabBar={this.toggleTabBar}
           onScroll={this.onScroll}
-          renderItem={({item}) => {
+          renderItem={({ item }) => {
               return (
                 <WineButton
                   info={item[1]}

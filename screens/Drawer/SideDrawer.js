@@ -1,27 +1,45 @@
 import React, { Component } from 'react';
 import {
   View,
-  TextInput,
   Dimensions,
-  FlatList
+  FlatList,
 } from 'react-native';
+import SearchBar from './SearchBar';
+import SearchResult from './SearchResult';
 
 class SideDrawer extends Component <{}> {
+  state = {
+    data: [
+      { id: 'Entry 1' },
+      { id: 'Entry 2' },
+      { id: 'Entry 3' },
+      { id: 'Entry 4' },
+      { id: 'Entry 5' },
+      { id: 'Entry 6' }
+    ],
+  };
+
   render() {
     return (
       <View style={{ flex: 1 }}>
         <View style={styles.wrapper}>
 
-          <View style={styles.searchWrapper}>
-            <TextInput
-              placeholder='Search entries'
-              underlineColorAndroid='rgba(0,0,0,0)'
-              style={styles.textInputStyle}
-            />
+          <View style={{ flex: 1 }}>
+            <SearchBar/>
           </View>
 
-          <View>
+          <View style={styles.listWrapper}>
             <FlatList
+              style={{ flex: 1 }}
+              data={this.state.data}
+              keyExtractor={ item => item.id}
+              renderItem={({ item }) => {
+                return (
+                  <SearchResult>
+                    {item.id}
+                  </SearchResult>
+                );
+              }}
             />
           </View>
 
@@ -37,18 +55,9 @@ const styles = {
     height: Dimensions.get('window').height,
     backgroundColor: '#ddd',
   },
-  searchWrapper: {
-    backgroundColor: '#fff',
-    borderRadius: 25,
-    margin: 6,
-    marginTop: 50,
-    borderWidth: 1.5,
-    borderColor: '#ccc',
+  listWrapper: {
+    flex: 1,
   },
-  textInputStyle: {
-    marginLeft: 6,
-    fontSize: 18,
-  }
 }
 
 export default SideDrawer;
