@@ -18,5 +18,7 @@
         "quotes": ["error", "single"],
         "react/prop-types": ["off"],
         "no-console": ["warn"]
+        "semi": ["error", "always"],
+        "comma-style": ["error", "last"]
     }
 }
