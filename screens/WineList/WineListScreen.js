@@ -51,7 +51,7 @@ class WineListScreen extends Component <{}> {
       this.props.navigator.toggleTabs({
         to: 'shown',
         animated: true,
-      })
+      });
     }
   }
 
