@@ -12,6 +12,6 @@ const TechSheet = ({ source }) => {
       />
     </View>
   );
-}
+};
 
 export default TechSheet;

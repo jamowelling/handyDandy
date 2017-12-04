@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { View, Text } from 'react-native';
 
 const WineDetail = ({ detailCategory, detail }) => {
@@ -7,13 +7,13 @@ const WineDetail = ({ detailCategory, detail }) => {
     let res = '';
     if (typeof detail !== 'string' && typeof detail !== 'number') {
       detail.forEach(e => {
-        res += `${e + '\n'}`
+        res += `${e + '\n'}`;
       });
       return res;
     } else {
       return detail;
     }
-  }
+  };
 
   return (
     <View style={styles.container}>
@@ -32,7 +32,7 @@ const WineDetail = ({ detailCategory, detail }) => {
 
     </View>
   );
-}
+};
 
 const styles = {
   container: {
@@ -61,6 +61,6 @@ const styles = {
   detail: {
     textAlign: 'left',
   },
-}
+};
 
 export default WineDetail;

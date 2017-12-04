@@ -15,7 +15,7 @@ const EntryCreationBody = ({ onChangeText, value, autoFocus }) => {
       />
     </View>
   );
-}
+};
 
 const styles = {
   bodyStyle: {
@@ -24,6 +24,6 @@ const styles = {
     padding: 10,
     fontFamily: 'serif',
   }
-}
+};
 
 export default EntryCreationBody;

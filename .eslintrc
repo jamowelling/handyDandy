@@ -19,6 +19,7 @@
         "react/prop-types": ["off"],
         "no-console": ["warn"],
         "semi": ["error", "always"],
-        "comma-style": ["error", "last"]
+        "comma-style": ["error", "last"],
+        "object-curly-spacing": ["error", "always"]
     }
 }
