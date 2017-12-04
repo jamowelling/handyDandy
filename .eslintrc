@@ -17,6 +17,8 @@
         "keyword-spacing": ["error", { "before": true, "after": true }],
         "quotes": ["error", "single"],
         "react/prop-types": ["off"],
-        "no-console": ["warn"]
+        "no-console": ["warn"],
+        "semi": ["error", "always"],
+        "comma-style": ["error", "last"]
     }
 }
