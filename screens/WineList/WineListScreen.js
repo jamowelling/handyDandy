@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { View, FlatList, Platform, BackHandler } from 'react-native';
+import { Navigation } from 'react-native-navigation';
 import WineList from './WineList';
 import WineButton from './WineButton';
 
 class WineListScreen extends Component <{}> {
   constructor(props) {
     super(props);
-    BackHandler.addEventListener('hardwareBackPress', () => {
-      this.props.navigator.switchToTab({
-        tabIndex: 0,
-      });
+    BackHandler.addEventListener('hardwareBackPress', async () => {
+      const { screenId } = await Navigation.getCurrentlyVisibleScreenId();
+      if (screenId === 'screenInstanceID4') {
+        this.props.navigator.switchToTab({
+          tabIndex: 0,
+        });
+        return true;
+      }
+      this.props.navigator.pop();
       return true;
     });
   }
