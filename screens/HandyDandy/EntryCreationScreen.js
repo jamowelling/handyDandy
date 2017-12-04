@@ -3,7 +3,7 @@ import {
   View,
 } from 'react-native';
 import ActionButton from 'react-native-action-button';
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/FontAwesome';
 import EntryCreationBody from './EntryCreationBody';
 import EntryCreationTitle from './EntryCreationTitle';
 
@@ -52,7 +52,7 @@ class EntryCreationScreen extends Component <{}> {
     };
 
     // end with:
-    this.props._saveEntry(newEntry)
+    this.props._saveEntry(newEntry);
   }
 
   render() {

@@ -20,10 +20,10 @@ class WineDetailScreen extends Component <{}> {
       varietal,
       vintage,
       techSheet
-    } = this.props.info
+    } = this.props.info;
 
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <WineDetail detailCategory='Varietal' detail={varietal} />
         <WineDetail detailCategory='Grapes' detail={grapes} />
         <WineDetail detailCategory='Vintage' detail={vintage} />

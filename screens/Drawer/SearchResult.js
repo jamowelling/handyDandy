@@ -7,7 +7,7 @@ const SearchResult = ({ children }) => {
       <Text>{children}</Text>
     </TouchableOpacity>
   );
-}
+};
 
 const styles = {
   resultStyle: {
@@ -16,6 +16,6 @@ const styles = {
     alignItems: 'center',
     borderWidth: 0.5,
   }
-}
+};
 
 export default SearchResult;

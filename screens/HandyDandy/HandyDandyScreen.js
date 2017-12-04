@@ -96,10 +96,10 @@ export default class HandyDandyScreen extends Component<{}> {
       'Delete Entry',
       'Delete this entry?',
       [
-        {text: 'Cancel', style: 'cancel'},
-        {text: 'Delete', onPress: () => this._removeEntry(entry)},
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'Delete', onPress: () => this._removeEntry(entry) },
       ],
-    )
+    );
   }
 
   renderListItem = ({ item }) => {

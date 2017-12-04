@@ -18,7 +18,8 @@ const WineButton = ({ children, onPress, info }) => {
       default:
         return styles.white;
     }
-  }
+  };
+
   return (
       <TouchableOpacity style={[styles.container, determineStyle() ]} onPress={onPress}>
         <View style={styles.nameWrapper}>
@@ -28,7 +29,7 @@ const WineButton = ({ children, onPress, info }) => {
           <Text style={styles.varietalStyle}>{info.varietal}</Text>
         </View>
       </TouchableOpacity>
-  )
+  );
 };
 
 const styles = {

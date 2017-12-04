@@ -11,7 +11,7 @@ const SearchBar = () => {
       />
     </View>
   );
-}
+};
 
 const styles = {
   searchWrapper: {
@@ -26,6 +26,6 @@ const styles = {
     marginLeft: 6,
     fontSize: 18,
   },
-}
+};
 
 export default SearchBar;
