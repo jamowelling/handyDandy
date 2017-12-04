@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { View, TextInput, Dimensions } from 'react-native';
+import {
+  View,
+  TextInput,
+  Dimensions,
+  FlatList
+} from 'react-native';
 
 class SideDrawer extends Component <{}> {
   render() {
@@ -12,6 +17,11 @@ class SideDrawer extends Component <{}> {
               placeholder='Search entries'
               underlineColorAndroid='rgba(0,0,0,0)'
               style={styles.textInputStyle}
+            />
+          </View>
+
+          <View>
+            <FlatList
             />
           </View>
 
@@ -32,8 +42,8 @@ const styles = {
     borderRadius: 25,
     margin: 6,
     marginTop: 50,
-    borderWidth: 0.5,
-    borderColor: '#aaa',
+    borderWidth: 1.5,
+    borderColor: '#ccc',
   },
   textInputStyle: {
     marginLeft: 6,
