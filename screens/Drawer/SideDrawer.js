@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { View, TextInput, Dimensions } from 'react-native';
+import {
+  View,
+  TextInput,
+  Dimensions,
+  FlatList
+} from 'react-native';
 
 class SideDrawer extends Component <{}> {
   render() {
@@ -12,6 +17,11 @@ class SideDrawer extends Component <{}> {
               placeholder='Search entries'
               underlineColorAndroid='rgba(0,0,0,0)'
               style={styles.textInputStyle}
+            />
+          </View>
+
+          <View>
+            <FlatList
             />
           </View>
 
