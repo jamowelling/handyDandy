@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, TextInput } from 'react-native';
 
-const SearchBar = () => {
+const SearchBar = ({ onChangeText }) => {
   return (
     <View style={styles.searchWrapper}>
       <TextInput
+        onChangeText={onChangeText}
         placeholder='Search entries'
         underlineColorAndroid='rgba(0,0,0,0)'
         style={styles.textInputStyle}
