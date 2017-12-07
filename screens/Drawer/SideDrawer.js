@@ -24,6 +24,12 @@ class SideDrawer extends Component <{}> {
     this.setState({ searchText });
   }
 
+  findTag = (tag) => {
+    const entries = [];
+    let taggedEntries = entries.filter(entry => entry.includes(tag));
+    return taggedEntries;
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
