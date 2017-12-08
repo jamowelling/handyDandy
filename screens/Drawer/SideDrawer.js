@@ -9,6 +9,7 @@ import SearchResult from './SearchResult';
 
 class SideDrawer extends Component <{}> {
   state = {
+    searchText: '',
     data: [
       { id: 'Entry 1' },
       { id: 'Entry 2' },
@@ -19,13 +20,25 @@ class SideDrawer extends Component <{}> {
     ],
   };
 
+  onChangeText = (searchText) => {
+    this.setState({ searchText });
+  }
+
+  findTag = (tag) => {
+    const entries = [];
+    let taggedEntries = entries.filter(entry => entry.includes(tag));
+    return taggedEntries;
+  }
+
   render() {
     return (
       <View style={{ flex: 1 }}>
         <View style={styles.wrapper}>
 
           <View style={{ flex: 1 }}>
-            <SearchBar/>
+            <SearchBar
+              onChangeText={this.onChangeText}
+            />
           </View>
 
           <View style={styles.listWrapper}>
