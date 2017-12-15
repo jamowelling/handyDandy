@@ -1,7 +1,12 @@
+import React from 'react'; // eslint-disable-line
+import { Provider } from 'redux';
 import { Navigation } from 'react-native-navigation';
-import { registerScreens } from './src/screens';
 
-registerScreens();
+import { registerScreens } from './src/screens';
+import configureStore from './src/store/configureStore';
+
+const store = configureStore();
+registerScreens(store, Provider);
 
 Navigation.startTabBasedApp({
   tabs: [
