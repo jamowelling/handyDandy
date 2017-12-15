@@ -5,11 +5,12 @@ import {
   AsyncStorage,
   FlatList
 } from 'react-native';
+import { connect } from 'react-redux';
 import ActionButton from 'react-native-action-button';
 import ListEntry from './ListEntry';
 
 
-export default class HandyDandyScreen extends Component<{}> {
+class HandyDandyScreen extends Component<{}> {
   state = {
     entries: [],
   };
@@ -135,3 +136,9 @@ export default class HandyDandyScreen extends Component<{}> {
     );
   }
 }
+
+const mapStateToProps = props => {
+  return props;
+};
+
+export default connect(mapStateToProps, {})(HandyDandyScreen);
