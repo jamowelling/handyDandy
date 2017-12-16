@@ -28,7 +28,7 @@ class HandyDandyScreen extends Component<{}> {
   };
 
   componentDidMount() {
-    fetchEntries();
+    this.props.fetchEntries();
   }
 
   // async _retrieveEntries() {
@@ -124,12 +124,12 @@ class HandyDandyScreen extends Component<{}> {
   }
 
   render() {
-    console.log('this.props', this.props);
+    const { entries } = this.props.entriesReducer;
     return (
       <View style={{ flex: 1 }}>
         <FlatList
           style={{ flex: 1 }}
-          data={this.state.entries}
+          data={entries}
           keyExtractor={item => item.date}
           renderItem={this.renderListItem}
         />
