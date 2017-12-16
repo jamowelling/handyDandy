@@ -1,5 +1,5 @@
 import React from 'react'; // eslint-disable-line
-import { Provider } from 'redux';
+import { Provider } from 'react-redux';
 import { Navigation } from 'react-native-navigation';
 
 import { registerScreens } from './src/screens';

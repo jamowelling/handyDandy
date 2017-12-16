@@ -8,6 +8,7 @@ import {
 import { connect } from 'react-redux';
 import ActionButton from 'react-native-action-button';
 import ListEntry from './ListEntry';
+import { fetchEntries } from '../../actions/entryActions';
 
 
 class HandyDandyScreen extends Component<{}> {
@@ -27,23 +28,23 @@ class HandyDandyScreen extends Component<{}> {
   };
 
   componentDidMount() {
-    this._retrieveEntries();
+    fetchEntries();
   }
 
-  async _retrieveEntries() {
-    let entries;
-    try {
-      await AsyncStorage.getItem('handyDandyEntries', (err, res) => {
-        entries = res;
-        if (entries) {
-          entries = JSON.parse(entries);
-          this.setState({ entries });
-        }
-      });
-    } catch (error) {
-      // console.log('error: ', error);
-    }
-  }
+  // async _retrieveEntries() {
+  //   let entries;
+  //   try {
+  //     await AsyncStorage.getItem('handyDandyEntries', (err, res) => {
+  //       entries = res;
+  //       if (entries) {
+  //         entries = JSON.parse(entries);
+  //         this.setState({ entries });
+  //       }
+  //     });
+  //   } catch (error) {
+  //     // console.log('error: ', error);
+  //   }
+  // }
 
   _saveEntry = async (newEntry) => {
     let updatedEntries = [
@@ -123,6 +124,7 @@ class HandyDandyScreen extends Component<{}> {
   }
 
   render() {
+    console.log('this.props', this.props);
     return (
       <View style={{ flex: 1 }}>
         <FlatList
@@ -141,4 +143,4 @@ const mapStateToProps = props => {
   return props;
 };
 
-export default connect(mapStateToProps, {})(HandyDandyScreen);
+export default connect(mapStateToProps, { fetchEntries })(HandyDandyScreen);
